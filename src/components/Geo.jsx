@@ -24,32 +24,30 @@ export const Geo = () => {
     archRef.current.rotation.y = xNorm;
   };
 
-  return (
-    <>
-      {createPortal(
-        <div className="absolute min-h-screen min-w-screen top-0 bottom-0 left-0 right-0 -z-10">
-          <Canvas camera={{ fov: 60, position: [20, 0, 20], rotatey: 45 }}>
-            <OrbitControls
-              autoRotate={true}
-              autoRotateSpeed={0.5}
-              enablePan={false}
-              enableRotate={false}
-              enableZoom={false}
-              reverseOrbit={true}
-            />
-            <ambientLight
-              color={0xffffff}
-              intensity={2}
-            />
-            <directionalLight
-              color="white"
-              position={[0, 0, 5]}
-            />
-            <Archimedes ref={archRef} />
-          </Canvas>
-        </div>,
-        document.body
-      )}
-    </>
+  const Portal = createPortal(
+    <div className="absolute min-h-screen min-w-screen top-0 bottom-0 left-0 right-0 -z-10">
+      <Canvas camera={{ fov: 60, position: [20, 0, 20], rotatey: 45 }}>
+        <OrbitControls
+          autoRotate={true}
+          autoRotateSpeed={0.5}
+          enablePan={false}
+          enableRotate={false}
+          enableZoom={false}
+          reverseOrbit={true}
+        />
+        <ambientLight
+          color={0xffffff}
+          intensity={2}
+        />
+        <directionalLight
+          color="white"
+          position={[0, 0, 5]}
+        />
+        <Archimedes ref={archRef} />
+      </Canvas>
+    </div>,
+    document.body
   );
+
+  return <Portal />;
 };
