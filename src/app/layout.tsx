@@ -29,15 +29,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${space_mono.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${space_mono.variable}`}
+    >
       <body className="bg-stone-300 grid min-h-screen grid-rows-[auto_1fr_auto] pt-16">
         {children}
         <footer className="p-4">
           <div className="container mx-auto flex items-center justify-center font-mono text-neutral-500">
-            <span>
-              Copyright &copy; {new Date().getFullYear()} Jonathan McNeil. All
-              rights reserved.
-            </span>
+            <span>&copy; {new Date().getFullYear()} Jonathan McNeil</span>
           </div>
         </footer>
       </body>

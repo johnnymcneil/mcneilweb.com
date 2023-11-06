@@ -37,9 +37,13 @@ const ImageGrid = ({ cols = 3, images }: { cols?: number; images: Img[] }) => {
   return (
     <div className="grid grid-cols-3 grid-rows-1 gap-4 items-start">
       {columns.map((col, i) => (
-        <div key={i} className="grid gap-4">
+        <div
+          key={i}
+          className="grid gap-4"
+        >
           {col.map((img, j) => (
             <Image
+              key={j}
               src={img.src}
               alt={img.alt}
               className="rounded-md shadow-md hover:scale-[1.01] transition-transform"
@@ -82,9 +86,12 @@ export default function Home() {
         <H2>Experienced and Skilled In</H2>
 
         <div className="flex flex-wrap items-center justify-start gap-8">
-          {TechIcons.map((icon) => {
+          {TechIcons.map((icon, key) => {
             return (
-              <div className="flex flex-col items-center justify-center group relative overflow-clip hover:overflow-visible">
+              <div
+                key={key}
+                className="flex flex-col items-center justify-center group relative overflow-clip hover:overflow-visible"
+              >
                 <h3 className="none group-hover:block transition-all text-center absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[105%] w-fit bg-stone-50 p-2 rounded-md z-10 opacity-0 group-hover:opacity-100">
                   {icon.name}
                 </h3>
@@ -106,12 +113,27 @@ export default function Home() {
       </Container>
 
       <Container>
-        <div className="max-w-lg flex flex-col gap-4">
-          <H2>Web Services</H2>
-          <p className="text-xl bg-stone-50 px-3 py-2">
-            I make tools that work they way you need them to, and I make them
-            look their best. It's that simple.
-          </p>
+        <div className="flex flex-col items-start justify-start w-full gap-4">
+          <div className="max-w-lg flex flex-col gap-4">
+            <H2>Web Services</H2>
+            <p className="text-xl bg-stone-50 px-3 py-2">
+              I make tools that work they way you need them to, and I make them
+              look their best. It&apos;s that simple.
+            </p>
+          </div>
+          <div className="flex font-mono text-yellow-400 flex-wrap gap-4">
+            <p className="text-xl bg-stone-800 px-3 py-2">
+              Website Design & Development
+            </p>
+            <p className="text-xl bg-stone-800 px-3 py-2">
+              Branding & Marketing
+            </p>
+            <p className="text-xl bg-stone-800 px-3 py-2">Internal Tooling</p>
+            <p className="text-xl bg-stone-800 px-3 py-2">Design Refresh</p>
+            <p className="text-xl bg-stone-800 px-3 py-2">
+              Systems Administration
+            </p>
+          </div>
         </div>
       </Container>
     </main>
