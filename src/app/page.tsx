@@ -115,7 +115,7 @@ export default function Home() {
           <div className="max-w-lg flex flex-col gap-4">
             <H2>Web Services</H2>
             <p className="text-xl bg-stone-50 px-3 py-2">
-              I make tools that work they way you need them to, and I make them
+              I make tools that work the way you need them to, and I make them
               look their best. It&apos;s that simple.
             </p>
           </div>
