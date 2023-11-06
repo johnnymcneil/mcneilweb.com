@@ -2,10 +2,8 @@
 
 import Image, { StaticImageData } from 'next/image';
 import { ThreeScene } from '@/components/ThreeScene';
-import { ImageMap } from '@/lib/unsplash';
 import { TechIcons } from '@/lib/tech-icons';
-import MCSLogo from '@/images/web/mcs-logo.svg';
-import MCSScreenshot from '@/images/web/mcs-desktop.png';
+import { renderImages } from '@/lib/render-images';
 
 const Container = ({ children }: React.PropsWithChildren) => {
   return (
@@ -25,7 +23,7 @@ const H2 = ({ children }: React.PropsWithChildren) => {
 
 type Img = {
   src: StaticImageData;
-  alt: string;
+  name: string;
 };
 
 const ImageGrid = ({ cols = 3, images }: { cols?: number; images: Img[] }) => {
@@ -45,7 +43,7 @@ const ImageGrid = ({ cols = 3, images }: { cols?: number; images: Img[] }) => {
             <Image
               key={j}
               src={img.src}
-              alt={img.alt}
+              alt={img.name}
               className="rounded-md shadow-md hover:scale-[1.01] transition-transform"
             />
           ))}
@@ -109,7 +107,7 @@ export default function Home() {
 
       <Container>
         <H2>3D Design and VDC</H2>
-        <ImageGrid images={ImageMap} />
+        <ImageGrid images={renderImages} />
       </Container>
 
       <Container>
