@@ -6,13 +6,7 @@ import { useGLTF, useTexture } from '@react-three/drei';
 export const Archimedes = React.forwardRef(function Archimedes(props, ref) {
   const { nodes, materials } = useGLTF('/archimedes.glb');
   return (
-    <group
-      {...props}
-      ref={ref}
-      dispose={null}
-      position={[-20, 0, 0]}
-      rotation={[0, 90, 0]}
-    >
+    <group {...props} ref={ref} dispose={null} position={[-20, 0, 0]}>
       <mesh
         castShadow
         receiveShadow
@@ -57,10 +51,7 @@ export const Archimedes = React.forwardRef(function Archimedes(props, ref) {
         material={materials.glass}
         position={[0, -8.491, -2.805]}
       />
-      <group
-        position={[5.452, -7.05, 8.149]}
-        rotation={[-0.01, 0, 0]}
-      >
+      <group position={[5.452, -7.05, 8.149]} rotation={[-0.01, 0, 0]}>
         <mesh
           castShadow
           receiveShadow

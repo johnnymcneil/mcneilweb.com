@@ -29,22 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${space_mono.variable}`}
-    >
-      <body className="bg-stone-100 grid min-h-screen grid-rows-[auto_1fr_auto]">
-        <header className=" p-4">
-          <div className="container mx-auto flex flex-col gap-4 items-center justify-start">
-            <a
-              href="/"
-              title="Go to home page"
-              className="font-mono font-bold uppercase tracking-wider text-stone-700 text-2xl hover:text-yellow-600 transition-colors"
-            >
-              McNeil Web
-            </a>
-          </div>
-        </header>
+    <html lang="en" className={`${inter.variable} ${space_mono.variable}`}>
+      <body className="bg-stone-300 grid min-h-screen grid-rows-[auto_1fr_auto] pt-16">
         {children}
         <footer className="p-4">
           <div className="container mx-auto flex items-center justify-center font-mono text-neutral-500">

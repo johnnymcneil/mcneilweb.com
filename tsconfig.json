@@ -28,7 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/Archimedes.jsx",
-    "src/components/Geo.jsx"
+    "src/components/ThreeScene.jsx"
   ],
   "exclude": ["node_modules"]
 }
