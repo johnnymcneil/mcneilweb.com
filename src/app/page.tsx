@@ -33,7 +33,7 @@ const ImageGrid = ({ cols = 3, images }: { cols?: number; images: Img[] }) => {
     columns[i % cols] = [...columns[i % cols], img];
   });
   return (
-    <div className="grid grid-cols-3 grid-rows-1 gap-4 items-start">
+    <div className="grid md:grid-cols-3 grid-rows-1 gap-4 items-start">
       {columns.map((col, i) => (
         <div
           key={i}
@@ -83,7 +83,7 @@ export default function Home() {
       <Container>
         <H2>Experienced and Skilled In</H2>
 
-        <div className="flex flex-wrap items-center justify-start gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-8 bg-stone-200 rounded-md shadow-md p-8">
           {TechIcons.map((icon, key) => {
             return (
               <div
